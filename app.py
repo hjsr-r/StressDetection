@@ -399,6 +399,6 @@ elif st.session_state.page == 'tentang':
 
     st.markdown("<div class='section-header' style='margin-top: 40px;'>Tahap 2: Keputusan Final (Meta Learner)</div>", unsafe_allow_html=True)
     with st.container(border=True):
-        st.markdown("<h4 style='color: #38A169;'>Direktur Rumah Sakit (Logistic Regression)</h4>", unsafe_allow_html=True)
+        st.markdown("<h4 style='color: #434190;'>Direktur Rumah Sakit (Logistic Regression)</h4>", unsafe_allow_html=True)
         st.write("Setelah ketiga dokter spesialis di atas memberikan hasil diagnosis masing-masing, kadang hasilnya bisa berbeda (misal: DT bilang Tinggi, tapi KNN bilang Sedang).")
         st.write("Di sinilah **Meta Learner (Logistic Regression)** bertugas. Sebagai Direktur Rumah Sakit, ia mendengarkan pendapat ketiga dokter tersebut, mengevaluasi siapa yang paling bisa dipercaya untuk kasus tertentu, dan menjatuhkan **Satu Keputusan Final** (Rendah, Sedang, atau Tinggi) yang paling akurat.")
