@@ -318,7 +318,7 @@ elif st.session_state.page == 'konselor':
             
             st.write("<br>", unsafe_allow_html=True)
             
-            if st.button("Mulai Analisis Deteksi Stres", type="primary", use_container_width=True):
+            if st.button("Mulai Analisis Deteksi Stres", type="tertiary", use_container_width=True):
                 with st.spinner('Menganalisis jutaan kemungkinan data...'):
                     df_numeric_mass = pd.DataFrame()
                     for target_col, excel_col in col_mapping.items():
@@ -354,7 +354,7 @@ elif st.session_state.page == 'konselor':
                         
                         counts = df_result["Prediksi Tingkat Stres"].value_counts().reset_index()
                         counts.columns = ['Status', 'Total']
-                        chart_colors = {"Tinggi": "#E53E3E", "Sedang": "#D69E2E", "Rendah": "#38A169"}
+                        chart_colors = {"Tinggi": "#595BE1", "Sedang": "#DBC58C", "Rendah": "#71D29E"}
                         
                         viz_col1, viz_col2 = st.columns(2)
                         with viz_col1:
@@ -399,6 +399,6 @@ elif st.session_state.page == 'tentang':
 
     st.markdown("<div class='section-header' style='margin-top: 40px;'>Tahap 2: Keputusan Final (Meta Learner)</div>", unsafe_allow_html=True)
     with st.container(border=True):
-        st.markdown("<h4 style='color: #434190;'>Direktur Rumah Sakit (Logistic Regression)</h4>", unsafe_allow_html=True)
+        st.markdown("<h4 style='color: #38A169;'>Direktur Rumah Sakit (Logistic Regression)</h4>", unsafe_allow_html=True)
         st.write("Setelah ketiga dokter spesialis di atas memberikan hasil diagnosis masing-masing, kadang hasilnya bisa berbeda (misal: DT bilang Tinggi, tapi KNN bilang Sedang).")
         st.write("Di sinilah **Meta Learner (Logistic Regression)** bertugas. Sebagai Direktur Rumah Sakit, ia mendengarkan pendapat ketiga dokter tersebut, mengevaluasi siapa yang paling bisa dipercaya untuk kasus tertentu, dan menjatuhkan **Satu Keputusan Final** (Rendah, Sedang, atau Tinggi) yang paling akurat.")
